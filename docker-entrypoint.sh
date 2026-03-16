@@ -4,7 +4,7 @@ TAC_PLUS_BIN=/tacacs/sbin/tac_plus
 CONF_FILE=/etc/tac_plus/tac_plus.cfg
 
 # Check configuration file exists
-if [ ! -f /etc/tac_plus/tac_plus.cfg ]; then
+if [ ! -f ${CONF_FILE} ]; then
     echo "No configuration file at ${CONF_FILE}"
     exit 1
 fi

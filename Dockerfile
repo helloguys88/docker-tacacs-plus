@@ -12,7 +12,7 @@ ADD https://github.com/lfkeitel/event-driven-servers/archive/refs/tags/$SRC_VERS
 RUN echo "${SRC_HASH}  /tac_plus.tar.gz" | sha256sum -c -
 
 RUN apt update && \
-    apt install -y gcc libc6-dev make bzip2 libdigest-md5-perl libnet-ldap-perl libio-socket-ssl-perl && \
+#    apt install -y gcc libc6-dev make bzip2 libdigest-md5-perl libnet-ldap-perl libio-socket-ssl-perl && \
     tar -xzf /tac_plus.tar.gz && \
     cd /event-driven-servers-$SRC_VERSION && \
     ./configure --prefix=/tacacs && \
@@ -29,7 +29,7 @@ COPY tac_plus.sample.cfg /etc/tac_plus/tac_plus.cfg
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 RUN apt update && \
-    apt install -y libdigest-md5-perl libnet-ldap-perl  libio-socket-ssl-perl && \
+#    apt install -y libdigest-md5-perl libnet-ldap-perl  libio-socket-ssl-perl && \
     rm -rf /var/cache/apt/*
 
 EXPOSE 49
